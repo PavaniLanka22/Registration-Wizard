@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #070b14;
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+
+  --primary: #7c3aed;
+  --primary2: #4f46e5;
+
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(124,58,237,0.25), transparent 40%),
+    radial-gradient(circle at bottom, rgba(79,70,229,0.18), transparent 55%),
+    var(--bg);
+
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* PAGE CENTER */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* CARD */
+.form-card {
+  width: 100%;
+  max-width: 540px;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(22px);
+
+  border-radius: var(--radius);
+
+  padding: 44px;
+
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TITLES */
+h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.form-subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 26px;
+  line-height: 1.5;
+}
+
+/* INPUTS */
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* FIX: calendar icon visibility + dark input fix */
+input {
+  width: 100%;
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  border: 1px solid var(--border);
+
+  background: rgba(255,255,255,0.04);
+
+  color: var(--text);
+
+  font-size: 15px;
+
+  transition: 0.2s ease;
+
+  /* IMPORTANT: fixes date/calendar visibility */
+  color-scheme: dark;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(124,58,237,0.15);
+  background: rgba(255,255,255,0.06);
+}
+
+/* ERROR */
+.error {
+  font-size: 12px;
+  margin-top: 6px;
+  color: var(--danger);
+}
+
+/* PASSWORD */
+.password-wrapper {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.eye-icon:hover {
+  color: var(--text);
+}
+
+/* BUTTONS */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.next-btn,
+.submit-btn {
+  flex: 1;
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+  color: white;
+}
+
+.next-btn:hover,
+.submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.back-btn {
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* PROGRESS */
+.progress-container {
+  margin-bottom: 24px;
+}
+
+.step-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  height: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary2));
+}
+
+/* ========================= */
+/* REVIEW SECTION FIX (IMPORTANT)
+/* ========================= */
+
+.review-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+
+  padding: 22px;
+  margin-top: 16px;
+}
+
+/* spacing between items improved */
+.review-box p {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 14px 0;   /* increased spacing */
+
+  font-size: 14px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.review-box p:last-child {
+  border-bottom: none;
+}
+
+/* better label/value hierarchy */
+.review-box strong {
+  color: #cbd5e1;
+}
+
+/* ========================= */
+/* SUCCESS SCREEN (unchanged)
+/* ========================= */
+
+.success-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at top, rgba(34,197,94,0.15), transparent 40%),
+    radial-gradient(circle at bottom, rgba(124,58,237,0.15), transparent 60%),
+    var(--bg);
+}
+
+.success-card {
+  text-align: center;
+
+  padding: 50px 40px;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+}
+
+.checkmark {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 18px auto;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(34,197,94,0.15);
+
+  color: var(--success);
+
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.success-card h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.success-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
