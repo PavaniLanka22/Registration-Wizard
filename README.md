@@ -1,4 +1,6 @@
-The Registration Wizard
+**The Registration Wizard**
+
+**Live Demo Link:** https://vercel.com/pavanilanka22s-projects/registration-wizard/2Bhkbt9p7oZnTJmZfMbcs9mbucBE
 
 ![alt text](<Screenshot 2026-05-21 174432.png>)
 
